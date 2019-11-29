@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   std_srvs
   tf
+##  message_generation	##add
 )
 
 ## System dependencies are found with CMake's conventions
@@ -52,6 +53,7 @@ catkin_python_setup()
 #   FILES
 #   Message1.msg
 #   Message2.msg
+#    current.msg
 # )
 
 ## Generate services in the 'srv' folder
@@ -106,7 +108,7 @@ catkin_python_setup()
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES roboclaw_node
-#  CATKIN_DEPENDS geometry_msgs nav_msgs roscpp rospy std_msgs tf
+#  CATKIN_DEPENDS geometry_msgs nav_msgs roscpp rospy std_msgs tf message_runtime
 #  DEPENDS system_lib
 )
 
@@ -115,7 +117,7 @@ catkin_package(
 ###########
 
 ## Specify additional locations of header files
-## Your package locations should be listed before other locations
+# Your package locations should be listed before other locations
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}

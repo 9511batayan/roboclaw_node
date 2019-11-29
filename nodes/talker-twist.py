@@ -34,8 +34,8 @@ import time
 #import sys, select, termios, tty
 
 if __name__=="__main__":
-	control_speed = 0.9	# [m/s]
-	control_turn = 0.0	# [rad/s]
+	control_speed = .1	# [m/s]
+	control_turn = .0	# [rad/s]
 	rospy.init_node('test_twist')
 	pub = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
 	try:	

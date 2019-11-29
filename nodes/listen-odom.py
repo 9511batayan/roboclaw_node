@@ -33,15 +33,16 @@
 #
 # Revision $Id$
 
-## Simple talker demo that listens to std_msgs/Strings published 
-## to the 'chatter' topic
+## Simple talker demo that listens to nav_msgs/Odometry published 
+## to the 'odom' topic
 
 import rospy
-from std_msgs.msg import String
 from nav_msgs.msg import Odometry
 
 def callback(msg):
-	print(msg)
+	rospy.loginfo("Position x:%f y:%f z:%f", msg.pose.pose.position.x,msg.pose.pose.position.y,msg.pose.pose.position.z)
+	rospy.loginfo("Orientation x:%f y:%f z:%f w:%f", msg.pose.pose.orientation.x,msg.pose.pose.orientation.y,msg.pose.pose.orientation.z,msg.pose.pose.orientation.w)
+	rospy.loginfo("Velocity Linear:%f Angular:%f", msg.twist.twist.linear.x,msg.twist.twist.angular.z)
 
 def listener():
 
@@ -50,11 +51,10 @@ def listener():
     # anonymous=True flag means that rospy will choose a unique
     # name for our 'listener' node so that multiple listeners can
     # run simultaneously.
-	rate = rospy.Rate(10)
-	rospy.Subscriber('odom', Odometry, callback)
+	rospy.Subscriber("odom", Odometry, callback)
     # spin() simply keeps python from exiting until this node is stopped
-	rate.sleep()
+	rospy.spin()
 
 if __name__ == '__main__':
-	rospy.init_node('test_sub_odom', anonymous=True)
+	rospy.init_node('listenodom', anonymous=True)
 	listener()

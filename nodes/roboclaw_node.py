@@ -164,8 +164,8 @@ class Node:
         roboclaw.SpeedM1M2(self.address, 0, 0)
         roboclaw.ResetEncoders(self.address)
 
-        self.MAX_SPEED = float(rospy.get_param("~max_speed", ".99"))
-        self.TICKS_PER_METER = float(rospy.get_param("~tick_per_meter", "1100.0"))
+        self.MAX_SPEED = float(rospy.get_param("~max_speed", "1.0"))
+        self.TICKS_PER_METER = float(rospy.get_param("~tick_per_meter", "1105.0"))
         self.BASE_WIDTH = float(rospy.get_param("~base_width", "0.265"))
 
         self.encodm = EncoderOdom(self.TICKS_PER_METER, self.BASE_WIDTH)
@@ -244,8 +244,8 @@ class Node:
                 roboclaw.ForwardM1(self.address, 0)
                 roboclaw.ForwardM2(self.address, 0)
             else:
-		roboclaw.SpeedAccelM1(self.address, 110, vr_ticks)
-		roboclaw.SpeedAccelM2(self.address, 110, vl_ticks)
+		roboclaw.SpeedAccelM1(self.address, 200, vr_ticks)
+		roboclaw.SpeedAccelM2(self.address, 200, vl_ticks)
 #		roboclaw.SpeedM1M2(self.address, vr_ticks, vl_ticks)
         except OSError as e:
             rospy.logwarn("SpeedM1M2 OSError: %d", e.errno)
