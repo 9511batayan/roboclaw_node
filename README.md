@@ -1,7 +1,9 @@
 # roboclaw_node
 Control based on Roboclaw Controller in ROS environment  
 Improved the following repositories  
-https://github.com/sonyccd/roboclaw_ros
+https://github.com/sonyccd/roboclaw_ros  
+Explanation article(Japanese)
+https://qiita.com/fujikawabata/items/a716694accc3cc52784e
 
 # Improvement
 From Speed to Accelerate and Speed  
