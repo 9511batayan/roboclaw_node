@@ -244,8 +244,8 @@ class Node:
                 roboclaw.ForwardM1(self.address, 0)
                 roboclaw.ForwardM2(self.address, 0)
             else:
-		roboclaw.SpeedAccelM1(self.address, 200, vr_ticks)
-		roboclaw.SpeedAccelM2(self.address, 200, vl_ticks)
+		roboclaw.SpeedAccelM1(self.address, 100, vr_ticks)
+		roboclaw.SpeedAccelM2(self.address, 100, vl_ticks)
 #		roboclaw.SpeedM1M2(self.address, vr_ticks, vl_ticks)
         except OSError as e:
             rospy.logwarn("SpeedM1M2 OSError: %d", e.errno)
