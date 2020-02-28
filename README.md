@@ -12,8 +12,7 @@ Add script to subscribe /odom
 
 # Requirement
 Ubuntu mate 16.04  
-ROS kinetic  
-Roboclaw controller version is 4.1.33
+ROS kinetic
 
 # How to use
 Clone this repo
@@ -27,11 +26,15 @@ Start the master and run the script to calculate odometry
 ```
 $ roslaunch roboclaw_node roboclaw.launch
 ```
-When issuing a speed command
+If you want to publish the speed command
 ```
 $ rosrun roboclaw_node talker-twist.py
 ```
-When reading velocity, orientation and pose from Geometry_msg
+If you want to subscribe to velocity, orientation and pose
 ```
 $ rosrun roboclaw_node listen-odom.py
+```
+If yout want to teoperate the robot
+```
+$ rosrun roboclaw_node teleop_key.py
 ```
